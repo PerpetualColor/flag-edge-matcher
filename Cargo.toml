@@ -1,0 +1,8 @@
+[workspace]
+
+members = [
+  "src/edge-gen",
+  "src/shared",
+  "src/flag-matcher",
+  "src/graph-to-flag-img"
+]

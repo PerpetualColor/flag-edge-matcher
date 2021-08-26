@@ -1,0 +1,5 @@
+.vscode
+*.json
+*.png
+!flags/*.png
+target

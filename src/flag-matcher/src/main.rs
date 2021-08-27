@@ -227,6 +227,11 @@ fn generate_flag_arrangement(multi_flags_count: &HashMap<String, u32>, flags_to_
         idx: 1
     };
 
+    let mut start_id = start_id;
+    if !flags_to_multi_flags.contains_key(&start_id) {
+        start_id = flags_to_multi_flags.iter().collect::<Vec<(&String, &String)>>()[0].0.to_string();
+    }
+
     let initial_flag = flags_to_multi_flags.get(&start_id).unwrap().to_string();
     *initial_state.remaining_flags.get_mut(&initial_flag).unwrap() -= 1;
     if *initial_state.remaining_flags.get(&initial_flag).unwrap() == 0 {
